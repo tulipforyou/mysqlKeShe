@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UserNameServlet</servlet-name>
+        <servlet-class>controller.UserNameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserNameServlet</servlet-name>
+        <url-pattern>/UserNameServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AdminShowServlet</servlet-name>
+        <servlet-class>controller.AdminShowServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminShowServlet</servlet-name>
+        <url-pattern>/AdminShowServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AdminAlterServlet</servlet-name>
+        <servlet-class>controller.AdminAlterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminAlterServlet</servlet-name>
+        <url-pattern>/AdminAlterServlet</url-pattern>
+    </servlet-mapping>
+
+<!--    全局汉字编码过滤器-->
+    <filter>
+        <filter-name>goodFilter</filter-name>
+        <filter-class>filter.Filter01</filter-class>
+        <init-param>
+            <param-name>Encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>goodFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>Filter02</filter-name>
+        <filter-class>filter.Filter02</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter02</filter-name>
+        <url-pattern>/jsp/manage/*</url-pattern>
+    </filter-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

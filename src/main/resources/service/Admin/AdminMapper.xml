@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="service.Admin.AdminMapper">
+    <insert id="addAdmin" parameterType="admin">
+        insert into admin (adminName,adminPassword,adminSignDate) values (#{adminName},#{adminPassword},#{adminSignDate});
+    </insert>
+    <delete id="deleteAdmin" parameterType="int">
+        delete from admin where adminId=#{adminId};
+    </delete>
+    <update id="alterAdminPassword" parameterType="admin">
+        update admin set adminName=#{adminName},adminPassword=#{adminPassword} where adminId=#{adminId};
+    </update>
+    <update id="alterAdminPasswordByAdminName" parameterType="admin">
+        update admin set adminPassword=#{adminPassword} where adminName=#{adminName};
+    </update>
+    <select id="selectAllAdmin" resultType="admin">
+        select * from admin;
+    </select>
+    <select id="selectByName" parameterType="string" resultType="admin">
+        select * from admin where adminName=#{adminName};
+    </select>
+    <select id="selectAAdmin" parameterType="admin" resultType="admin">
+        select * from admin where adminName=#{adminName} and adminPassword=#{adminPassword};
+    </select>
+    <select id="selectById" parameterType="int" resultType="admin">
+        select * from admin where adminId=#{adminId};
+    </select>
+</mapper>

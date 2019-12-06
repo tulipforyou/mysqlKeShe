@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--这个配置文件要按顺序进行配置，不能乱序-->
+<!--        properties（属性）-->
+<!--        settings（设置）-->
+<!--        typeAliases（类型别名）-->
+<!--        typeHandlers（类型处理器）-->
+<!--        objectFactory（对象工厂）-->
+<!--        plugins（插件）-->
+<!--        environments（环境配置）-->
+    <!--        environment（环境变量）-->
+        <!--        transactionManager（事务管理器）-->
+        <!--        dataSource（数据源）-->
+<!--        databaseIdProvider（数据库厂商标识）-->
+<!--        mappers（映射器）-->
+<configuration>
+<!--读取配置文件-->
+    <properties resource="db.properties"/>
+    <typeAliases>
+        <package name="model"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <!--            使用ＪＤＢＣ事务-->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--                使用连接池链接数据库-->
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+<!--        以包的形式配置，方便，但ＸＭＬ文件要与接口文件同一级目录而且名字相同-->
+        <package name="service"/>
+    </mappers>
+
+</configuration>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="service.DeptDesc.DeptDescMapper">
+    <insert id="addDeptDsc" parameterType="deptdesc">
+        insert into deptDesc (deptName,deptAddr) values (#{deptName},#{deptAddr});
+    </insert>
+    <delete id="deleteDeptDesc" parameterType="int">
+        delete from deptDesc where deptId=#{deptId};
+    </delete>
+    <update id="alterDeptDesc" parameterType="deptdesc">
+        update deptDesc set deptName=#{deptName},deptAddr=#{deptAddr} where deptId=#{deptId};
+    </update>
+    <select id="selectAllDeptDesc" resultType="deptDesc">
+        select * from deptDesc;
+    </select>
+    <select id="selectDeptById" parameterType="int" resultType="deptdesc">
+        select * from deptDesc where deptId=#{deptId};
+    </select>
+    <select id="deptIds" resultType="int">
+        select deptId from deptDesc;
+    </select>
+</mapper>

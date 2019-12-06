@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="service.StaffDesc.StaffDescMapper">
+    <insert id="addStaffDesc" parameterType="staffdesc">
+        insert into staffDesc (staffName,staffPost,staffBoss,staffHireDate,deptId) values (#{staffName},#{staffPost},#{staffBoss},#{staffHireDate},#{deptId});
+    </insert>
+    <delete id="deleteStaffDesc" parameterType="int">
+        delete from staffDesc where staffId=#{staffId};
+    </delete>
+    <update id="updateStaffDesc" parameterType="staffdesc">
+        update staffDesc set staffName=#{staffName},staffPost=#{staffPost},staffBoss=#{staffBoss},deptId=#{deptId} where staffId=#{staffId};
+    </update>
+    <select id="selectAllStaffDesc" resultType="staffdesc">
+        select * from staffDesc;
+    </select>
+    <select id="selectStaffById" parameterType="int" resultType="staffdesc">
+        select * from staffDesc where staffId=#{staffId};
+    </select>
+    <select id="staffIds" resultType="int">
+        select staffId from staffDesc;
+    </select>
+</mapper>

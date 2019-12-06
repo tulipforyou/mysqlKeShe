@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="service.SalDesc.SalDescMapper">
+    <insert id="addSalDesc" parameterType="saldesc">
+        insert into salDesc (staffId,salBase,salComm,salExtra,salDeduct,salElse)
+                    values (#{staffId},#{salBase},#{salComm},#{salExtra},#{salDeduct},#{salElse});
+    </insert>
+    <delete id="deleteSalDesc" parameterType="int">
+        delete from salDesc where salId=#{salId};
+    </delete>
+    <update id="alterSalDesc" parameterType="saldesc">
+        update salDesc set staffId=#{staffId},salBase=#{salBase},salComm=#{salComm},salExtra=#{salExtra},salDeduct=#{salDeduct},salElse=#{salElse}
+                where salId=#{salId};
+    </update>
+    <select id="selectAllSalDesc" resultType="saldesc">
+        select * from salDesc;
+    </select>
+    <select id="selectSalById" parameterType="int" resultType="saldesc">
+        select * from salDesc where salId=#{salId};
+    </select>
+</mapper>
