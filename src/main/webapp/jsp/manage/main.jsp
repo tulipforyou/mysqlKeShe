@@ -32,7 +32,7 @@
     <h3>
         <p>
             This is a free responsive designed by Sun Chaohui at HFUT at Nov. 30th 2019 .
-            Download it on <a href="https://github.com/tulipforyou" target="_blank"><strong>github</strong></a>, customize and use it as you like!
+            Download it on <a href="https://github.com/tulipforyou/mysqlKeShe" target="_blank"><strong>github</strong></a>, customize and use it as you like!
         </p>
     </h3>
 
