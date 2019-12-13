@@ -34,7 +34,7 @@
     </form>
     <p>没有账号？点击 <a href="jsp/register.jsp">注册</a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="jsp/reset.jsp">忘记密码</a>
     </p>
 

@@ -1,3 +1,5 @@
+use keShe;
+
 create trigger triggerName
 after insert on admin
 for each row #这句话在mysql是固定的
